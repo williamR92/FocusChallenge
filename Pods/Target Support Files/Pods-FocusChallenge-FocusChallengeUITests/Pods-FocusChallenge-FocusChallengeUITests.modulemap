@@ -1,0 +1,6 @@
+framework module Pods_FocusChallenge_FocusChallengeUITests {
+  umbrella header "Pods-FocusChallenge-FocusChallengeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
