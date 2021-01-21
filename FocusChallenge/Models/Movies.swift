@@ -12,13 +12,13 @@ struct Movies: Decodable {
 }
 
 struct MovieDetail: Decodable {
-    var id : Int
-    var title : String
-    var vote_count : Int
-    var release_date : String
-    var poster_path : String
-    var overview : String
-    var vote_average : Decimal
+    var id : Int!
+    var title : String!
+    var vote_count : Int!
+    var release_date : String!
+    var poster_path : String!
+    var overview : String!
+    var vote_average : Double!
 }
 
 //var id : Int

@@ -101,11 +101,31 @@ class CurrentPopularMoviesUICollectionViewController: UICollectionViewController
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(MoviesCollectionViewCell.self), for: indexPath) as! MoviesCollectionViewCell
         let index = indexPath.row
-        let urlImage = URL(string: getUrl(section: 3, supplementaryDataURL: lisOfMovies[index].poster_path))
-        let title = lisOfMovies[index].title
-        let dateOfIssue = lisOfMovies[index].release_date
-        let voteAverage = lisOfMovies[index].vote_average
-        let description = lisOfMovies[index].overview
+        
+        var urlImage = URL(string: "https://iconsplace.com/wp-content/uploads/_icons/ffe500/256/png/error-icon-19-256.png")
+        if let url_ = lisOfMovies[index].poster_path{
+            urlImage = URL(string: getUrl(section: 3, supplementaryDataURL: url_))!
+        }
+        
+        var title = "N/A"
+        if let title_ = lisOfMovies[index].title{
+            title = title_
+        }
+        
+        var dateOfIssue = "N/A"
+        if let dateOfIssue_ = lisOfMovies[index].release_date{
+            dateOfIssue = dateOfIssue_
+        }
+        
+        var voteAverage = 0.0
+        if let voteAverage_ = lisOfMovies[index].vote_average{
+            voteAverage = voteAverage_
+        }
+        
+        var description = "N/A"
+        if let description_ = lisOfMovies[index].overview{
+            description = description_
+        }
         
         let myParagraphStyle1 = NSMutableParagraphStyle()
         myParagraphStyle1.lineSpacing = 0

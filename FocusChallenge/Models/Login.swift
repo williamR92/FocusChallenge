@@ -18,11 +18,11 @@ class LoginResponse: Decodable {
 }
 
 struct LoginOk: Decodable {
-    var token: String
+    var token: String!
 }
 
 struct LoginErr: Decodable {
-    var error: String
+    var error: String!
 }
 
 
